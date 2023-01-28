@@ -1,0 +1,21 @@
+/* .canvas_styles {
+  border: 1px solid #000000;
+} */
+.container_dollars {
+  position: absolute;
+  top: -128px;
+  left: 0;
+  width: 100%;
+
+  /* z-index: -1; */
+}
+.block_dollars {
+  display: flex;
+  justify-content: space-between;
+}
+.dollar_svg {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  /* margin-right: 50px; */
+}

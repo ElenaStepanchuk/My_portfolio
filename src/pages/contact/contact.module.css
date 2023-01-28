@@ -1,0 +1,14 @@
+.left_page {
+  width: 512px;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+}
+.right_page {
+  padding: 50px;
+  width: 512px;
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
