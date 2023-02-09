@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import css from './navigation.css';
+// import css from './navigation.css';
 
 import log from '../../img/log/log3.png';
 
@@ -9,6 +9,7 @@ import personSvg from '../../img/nav/person.svg';
 import skillsSvg from '../../img/nav/skills.svg';
 import myWorkSvg from '../../img/nav/myWork.svg';
 import contactsSvg from '../../img/nav/contacts.svg';
+// import SocialBtn from '../socialBtn/SocialBtn';
 
 const Navigation = () => {
   return (
@@ -96,6 +97,7 @@ const Navigation = () => {
           <IconNav src={contactsSvg} alt="icon contact" />
           <SpanNavText>Contact</SpanNavText>
         </NavLinkButton>
+        {/* <SocialBtn /> */}
       </RightNavContainer>
     </>
   );
@@ -109,20 +111,26 @@ const Log = styled.img`
   width: 24px;
   height: 24px;
   margin-left: -30px;
-  // margin-top: 15px;
+  /* margin-top: 15px; */
 `;
 const NavTitle = styled.h1`
-  font-size: 28px;
-  // font-size: 20px;
+  font-size: 14px;
   color: rgba(121, 99, 78, 1);
   text-transform: uppercase;
   margin: 0;
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
 `;
 const NavText = styled.p`
-  font-size: 17.5px;
+  font-size: 8.7px;
   color: rgba(121, 99, 78, 1);
   text-transform: uppercase;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 -5px;
+  @media screen and (min-width: 1200px) {
+    margin: 10px 0 0 0;
+    font-size: 17.5px;
+  }
 `;
 const animation = keyframes`
   10% {
@@ -311,16 +319,36 @@ const Span2 = styled.span`
 `;
 
 const RightNavContainer = styled.nav`
-  max-width: 512px;
-  margin-left: auto;
+  margin-right: 10px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(192, 166, 143, 0.5);
   text-transform: uppercase;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  @media screen and (min-width: 1200px) {
+    margin-right: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    position: static;
+    width: 512px;
+    margin-left: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
 `;
 
 const NavLinkButton = styled(NavLink)`
-  padding: 6px;
+  /* padding: 6px;
   width: 65px;
   max-height: 80px;
   justify-content: center;
@@ -333,20 +361,60 @@ const NavLinkButton = styled(NavLink)`
   position: relative;
   transition: all 500ms ease;
   transition: transform 0.2s;
+  outline: none; */
+  padding: 3px;
+  width: 40px;
+  max-height: 40px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(121, 99, 78, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  transition: all 500ms ease;
+  transition: transform 0.2s;
   outline: none;
+  @media screen and (min-width: 1200px) {
+    padding: 6px;
+    width: 65px;
+    max-height: 80px;
+    /* justify-content: center;
+    text-align: center; */
+    text-decoration: none;
+    color: rgba(121, 99, 78, 1);
+    border-radius: 20px;
+    /* display: flex;
+    flex-wrap: wrap;
+    position: relative; */
+    /* transition: all 500ms ease;
+    transition: transform 0.2s; */
+    /* outline: none; */
+  }
 
   :hover {
     transform: scale(1.3);
+    @media screen and (min-width: 1200px) {
+      /* transform: scale(1.3); */
+    }
   }
 
   :not(:first-child) {
-    margin-left: 15px;
+    margin-top: 15px;
+    @media screen and (min-width: 1200px) {
+      margin-top: 0;
+      margin-left: 15px;
+    }
   }
 
   :focus,
   :hover {
-    border-radius: 20px;
+    border-radius: 10px;
     background: #ffffff;
+    @media screen and (min-width: 1200px) {
+      border-radius: 20px;
+    }
   }
 
   :before {
@@ -354,27 +422,43 @@ const NavLinkButton = styled(NavLink)`
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 65px;
-    height: 0;
+    min-width: 40px;
+    border-radius: 10px;
     background: rgba(192, 166, 143, 0.5);
-    border-radius: 20px;
     transition: all 1s ease;
+    @media screen and (min-width: 1200px) {
+      min-width: 65px;
+      height: 0;
+      border-radius: 20px;
+    }
   }
 
   :hover:before {
     height: 100%;
     color: rgba(192, 166, 143, 0.5);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     text-align: center;
+    @media screen and (min-width: 1200px) {
+      font-size: 12px;
+    }
   }
 `;
 const IconNav = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  @media screen and (min-width: 1200px) {
+    width: 32px;
+    height: 32px;
+  }
 `;
 const SpanNavText = styled.span`
-  font-size: 8px;
+  font-size: 5px;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 2px;
+  @media screen and (min-width: 1200px) {
+    font-size: 8px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
 `;

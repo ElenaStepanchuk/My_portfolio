@@ -85,27 +85,49 @@ export default Home;
 
 const LeftPage = styled.div`
   display: flex;
-  width: 512px;
   justify-content: center;
-  padding: 50px;
+  padding: 10px;
+  /* @media screen and (min-width: 320px) {
+    max-width: 380px;
+  } */
+  /* @media screen and (min-width: 768px) {
+    max-width: 768px;
+    
+  } */
+  @media screen and (min-width: 1180px) {
+    width: 512px;
+    padding: 50px;
+  }
 `;
 
 const HomePhoto = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* @media screen and (min-width: 1024px) {
+   
+  } */
   /* border-radius: 30px; */
 `;
 
 const RightPage = styled.div`
-  padding: 50px;
-  width: 512px;
+  width: 100vw;
+  padding: 10px;
+  @media screen and (min-width: 1200px) {
+    padding: 50px;
+    width: 512px;
+  }
 `;
 const Text = styled.p`
-  font-size: 27px;
+  font-size: 15px;
   color: rgba(121, 99, 78, 1);
   font-weight: bold;
   text-transform: uppercase;
+  @media screen and (min-width: 1200px) {
+    font-size: 27px;
+    color: rgba(121, 99, 78, 1);
+    font-weight: bold;
+  }
 `;
 
 const animation = keyframes`
