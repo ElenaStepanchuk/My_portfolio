@@ -11,11 +11,21 @@ const Footer = () => {
 };
 export default Footer;
 const FooterContainer = styled.div`
-  display: flex;
-  // background: rgba(242, 237, 233, 1);
+  width: 100%;
   overflow: hidden;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 20px 20px 0;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    height: auto;
+    text-align: right;
+    justify-content: left;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 20px 0;
+  }
 `;

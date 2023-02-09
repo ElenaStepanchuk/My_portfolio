@@ -7,13 +7,18 @@ export default BackgroundContainer;
 const BackgroundWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  display: block;
+  min-width: 100vw;
+  min-height: 100vh;
   background-image: url(${background});
   background-size: 100% 100%;
   overflow: hidden;
-  padding: 80px;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (min-width: 1200px) {
+    padding: 80px;
+  }
 
   /* text-align: center; */
 

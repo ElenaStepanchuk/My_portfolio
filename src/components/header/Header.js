@@ -24,10 +24,16 @@ const HeaderWrapper = ({ children }) => {
 
 const HeaderContainer = styled.div`
   position: relative;
-  display: flex;
+  /* display: flex; */
   background: rgba(242, 237, 233, 1);
-  max-width: 1024px;
+  max-width: 100vw;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 10px;
+  @media screen and (min-width: 1200px) {
+    padding: 20px;
+    display: flex;
+    width: 1024px;
+  }
 `;

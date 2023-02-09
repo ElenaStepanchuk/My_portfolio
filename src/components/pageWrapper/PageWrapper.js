@@ -7,13 +7,18 @@ const PageWrapper = ({ children }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  background-size: cover;
-  background-image: url(${bg});
+  background: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1024px;
-  max-height: 1200px;
-  display: flex;
+  text-align: center;
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+    background-size: cover;
+    background-image: url(${bg});
+    width: 1024px;
+    max-height: 1200px;
+    display: flex;
+  }
 `;
 
 export default PageWrapper;
