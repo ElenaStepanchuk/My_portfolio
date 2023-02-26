@@ -23,7 +23,7 @@ const Contact = () => {
         <ContactText>
           I am interested in employment opportunities or large projects. Also,
           if you have any other questions, please contact me using the form on
-          the right. I will be happy to help you.
+          this page. I will be happy to help you.
         </ContactText>
       </div>
 
@@ -45,7 +45,10 @@ const animation = keyframes`
 	}
   `;
 const Span = styled.span`
-  font-size: 28px;
+  font-size: 15px;
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
@@ -86,7 +89,10 @@ const Span = styled.span`
 const ContactText = styled.p`
   color: rgba(121, 99, 78, 1);
   font-style: italic;
-  font-size: 20px;
+  font-size: 10px;
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
   font-weight: bold;
   text-align: justify;
   opacity: 0;

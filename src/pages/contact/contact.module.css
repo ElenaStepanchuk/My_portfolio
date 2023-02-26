@@ -1,14 +1,32 @@
-.left_page {
-  width: 512px;
-  padding: 50px;
-  text-align: center;
-  position: relative;
+@media screen and (min-width: 1200px) {
+  .left_page {
+    width: 512px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+  }
+  .right_page {
+    padding: 50px;
+    width: 512px;
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
 }
-.right_page {
-  padding: 50px;
-  width: 512px;
-  /* display: flex; */
-  justify-content: center;
-  text-align: center;
-  position: relative;
+
+@media screen and (max-width: 1199px) {
+  .left_page {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+  }
+  .right_page {
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
 }
