@@ -41,24 +41,34 @@ const Form = () => {
 
   const sendEmail = event => {
     event.preventDefault();
-    emailjs
-      .sendForm(
-        'service_7iz1nuk',
-        'template_rau1uj8',
-        form.current,
-        'g7-WjxSWoov268bP8'
-      )
-      .then(
-        () => {
-          Notify.success('Your message sent');
-          console.log('Email send');
-          reset();
-        },
-        () => {
-          Notify.failure('Message not sent, please try again later!');
-          throw console.error('Email not send');
-        }
-      );
+    if (!name || !email || !subject || !message) {
+      return Notify.failure('Enter all fields in form!', {
+        width: '200px',
+        position: 'center-center',
+        distance: '10px',
+        opacity: 1,
+        borderRadius: '2px',
+      });
+    } else {
+      emailjs
+        .sendForm(
+          'service_7iz1nuk',
+          'template_rau1uj8',
+          form.current,
+          'g7-WjxSWoov268bP8'
+        )
+        .then(
+          () => {
+            Notify.success('Your message sent');
+            console.log('Email send');
+            reset();
+          },
+          () => {
+            Notify.failure('Message not sent, please try again later!');
+            throw console.error('Email not send');
+          }
+        );
+    }
   };
 
   return (
@@ -125,7 +135,7 @@ const Form = () => {
           <label className={css.form_label}>Message</label>
         </div>
         <button className={css.form_button} type="submit" onClick={sendEmail}>
-          sent
+          send
         </button>
       </form>
     </>

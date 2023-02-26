@@ -244,7 +244,7 @@
 @media screen and (max-width: 1199px) {
   .left_page {
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     justify-content: center;
     text-align: center;
     position: relative;
@@ -299,7 +299,7 @@
     top: 50%;
     left: 10%;
     margin-left: calc(var(--controlSizeMobile) / -2);
-    margin-top: calc(var(--controlSizeMobile) / -2);
+    margin-top: calc(var(--controlSizeMobile) / -5);
     transition: background-color 0.3s;
     border: 2px solid rgba(179, 154, 132, 1);
     cursor: pointer;
@@ -314,7 +314,7 @@
     position: absolute;
     top: 50%;
     margin-left: calc(var(--controlSizeMobile) / -2);
-    margin-top: calc(var(--controlSizeMobile) / -2);
+    margin-top: calc(var(--controlSizeMobile) / -5);
     transition: background-color 0.3s;
     cursor: pointer;
     border: 2px solid rgba(179, 154, 132, 1);
@@ -385,43 +385,44 @@
   /* -------------end left control buttons-------------- */
 
   .right_page {
-    padding: 50px;
-    width: 512px;
+    width: 100%;
+    padding: 10px;
     justify-content: center;
     text-align: center;
     position: relative;
+    background: rgba(179, 154, 132, 0.5);
   }
 
   /* -----------------right control buttons------------------ */
 
   .slider_control2 {
-    width: var(--controlSize);
-    height: var(--controlSize);
+    width: var(--controlSizeMobile);
+    height: var(--controlSizeMobile);
     background: rgba(179, 154, 132, 1);
     border-radius: 50%;
     z-index: 2;
     position: absolute;
     top: 50%;
     left: 10%;
-    margin-left: calc(var(--controlSize) / -2);
-    margin-top: calc(var(--controlSize) / -2);
+    margin-left: calc(var(--controlSizeMobile) / -2);
+    margin-top: calc(var(--controlSizeMobile) / -5);
     transition: background-color 0.3s;
-    border: 3px solid #ffffff;
+    border: 2px solid #ffffff;
     cursor: pointer;
   }
   .slider_control__right2 {
-    width: var(--controlSize);
-    height: var(--controlSize);
+    width: var(--controlSizeMobile);
+    height: var(--controlSizeMobile);
     background: rgba(179, 154, 132, 1);
     border-radius: 50%;
     z-index: 2;
     position: absolute;
     top: 50%;
-    margin-left: calc(var(--controlSize) / -2);
-    margin-top: calc(var(--controlSize) / -2);
+    margin-left: calc(var(--controlSizeMobile) / -2);
+    margin-top: calc(var(--controlSizeMobile) / -5);
     transition: background-color 0.3s;
     cursor: pointer;
-    border: 3px solid #ffffff;
+    border: 2px solid #ffffff;
     left: 90%;
   }
 
@@ -432,10 +433,10 @@
   .slider_control__line2,
   .slider_control__line__right2 {
     position: absolute;
-    left: 15px;
+    left: 4px;
     top: 50%;
-    width: 3px;
-    height: 14px;
+    width: 2px;
+    height: 8px;
     transform-origin: 50% 0;
     transform: rotate(-45deg);
   }
@@ -455,7 +456,7 @@
     transition: background-color 0.3s;
   }
   .slider_control__line__right2 {
-    left: 28px;
+    left: 11px;
     transform-origin: 1px 0;
     transform: rotate(45deg);
   }

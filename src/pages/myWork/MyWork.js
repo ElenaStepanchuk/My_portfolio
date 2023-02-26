@@ -161,7 +161,8 @@ const MyWork = () => {
             </button>
           </div>
         </div>
-        {/* <div className={css.right_page}>
+        {/* ------------------ */}
+        <div className={css.right_page}>
           <Span>C</Span>
           <Span>o</Span>
           <Span>m</Span>
@@ -210,7 +211,7 @@ const MyWork = () => {
               <div className={css.slider_control__line__right2}></div>
             </button>
           </div>
-        </div> */}
+        </div>
       </PageWrapper>
     </>
   );
@@ -228,7 +229,11 @@ const animation = keyframes`
 	}
   `;
 const Span = styled.span`
-  font-size: 28px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;

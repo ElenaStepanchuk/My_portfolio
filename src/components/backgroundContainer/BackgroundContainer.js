@@ -16,6 +16,7 @@ const BackgroundWrapper = styled.div`
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
+
   @media screen and (min-width: 1200px) {
     padding: 80px;
   }
