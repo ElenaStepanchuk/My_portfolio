@@ -22,7 +22,7 @@ export const App = () => {
         <Header />
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" index element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="home" index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="skills" element={<Skills />} />

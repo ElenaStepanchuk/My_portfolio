@@ -161,7 +161,7 @@ const MyWork = () => {
             </button>
           </div>
         </div>
-        <div className={css.right_page}>
+        {/* <div className={css.right_page}>
           <Span>C</Span>
           <Span>o</Span>
           <Span>m</Span>
@@ -210,7 +210,7 @@ const MyWork = () => {
               <div className={css.slider_control__line__right2}></div>
             </button>
           </div>
-        </div>
+        </div> */}
       </PageWrapper>
     </>
   );

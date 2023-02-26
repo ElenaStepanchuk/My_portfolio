@@ -47,19 +47,26 @@ const About = () => {
 export default About;
 
 const LeftPage = styled.div`
-  width: 512px;
+  padding: 10px 10px 0 10px;
+  width: 100%;
   overflow: hidden;
   justify-content: center;
-  padding: 50px;
+  @media screen and (min-width: 1200px) {
+    width: 512px;
+    padding: 50px;
+  }
 `;
 
 const RightPage = styled.div`
-  width: 512px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 50px;
+  padding: 0 10px 10px 10px;
+  @media screen and (min-width: 1200px) {
+    width: 512px;
+    padding: 50px;
+  }
 `;
 const animation = keyframes`
   10% {
@@ -71,7 +78,10 @@ const animation = keyframes`
 	}
   `;
 const Span = styled.span`
-  font-size: 28px;
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;

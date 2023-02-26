@@ -111,9 +111,10 @@ const HomePhoto = styled.img`
 `;
 
 const RightPage = styled.div`
-  width: 100vw;
+  width: 100%;
   padding: 10px;
   @media screen and (min-width: 1200px) {
+    width: 100vw;
     padding: 50px;
     width: 512px;
   }
