@@ -1,17 +1,15 @@
 import styled, { keyframes } from 'styled-components';
-import { NavLink } from 'react-router-dom';
-// import css from './navigation.css';
+import { useState } from 'react';
 
-import log from '../../img/log/log3.png';
+import NavList from 'components/navList/NavList';
 
-import homeSvg from '../../img/nav/home.svg';
-import personSvg from '../../img/nav/person.svg';
-import skillsSvg from '../../img/nav/skills.svg';
-import myWorkSvg from '../../img/nav/myWork.svg';
-import contactsSvg from '../../img/nav/contacts.svg';
-// import SocialBtn from '../socialBtn/SocialBtn';
+import log from '../../img/log/Logo.png';
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleShowMenu = () => {
+    setIsMenuOpen(isOpen => !isOpen);
+  };
   return (
     <>
       <LeftNavContainer>
@@ -75,61 +73,68 @@ const Navigation = () => {
           <Span2>&nbsp;</Span2>
           <Span2>r</Span2>
         </NavText>
+        <ShowNavListbutton
+          type="button"
+          onClick={handleShowMenu}
+          alt="icon home"
+        >
+          <Menu />
+          <Menu />
+          <Menu />
+          {/* <IconMenu src={homeSvg} alt="icon home" /> */}
+        </ShowNavListbutton>
       </LeftNavContainer>
-      <RightNavContainer>
-        <NavLinkButton to="home">
-          <IconNav src={homeSvg} alt="icon home" />
-          <SpanNavText>Home</SpanNavText>
-        </NavLinkButton>
-        <NavLinkButton to="about">
-          <IconNav src={personSvg} alt="icon person" />
-          <SpanNavText>About</SpanNavText>
-        </NavLinkButton>
-        <NavLinkButton to="skills">
-          <IconNav src={skillsSvg} alt="icon skills" />
-          <SpanNavText>Skills</SpanNavText>
-        </NavLinkButton>
-        <NavLinkButton to="mywork">
-          <IconNav src={myWorkSvg} alt="icon ny work" />
-          <SpanNavText>My works</SpanNavText>
-        </NavLinkButton>
-        <NavLinkButton to="contact">
-          <IconNav src={contactsSvg} alt="icon contact" />
-          <SpanNavText>Contact</SpanNavText>
-        </NavLinkButton>
-        {/* <SocialBtn /> */}
-      </RightNavContainer>
+      {isMenuOpen && (
+        <RightNavContainerMobile onClick={handleShowMenu}>
+          <NavList />
+        </RightNavContainerMobile>
+      )}
+      <RightNavContainerDesktop>
+        <NavList />
+      </RightNavContainerDesktop>
     </>
   );
 };
 export default Navigation;
 
 const LeftNavContainer = styled.div`
-  padding-left: 30px;
+  position: relative;
+  padding-left: 10px;
+  @media screen and (min-width: 1200px) {
+    padding-left: 30px;
+  }
 `;
 const Log = styled.img`
-  width: 24px;
-  height: 24px;
-  margin-left: -30px;
-  /* margin-top: 15px; */
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 0;
+  left: 10px;
+  @media screen and (min-width: 1200px) {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+  }
 `;
 const NavTitle = styled.h1`
   font-size: 14px;
   color: rgba(121, 99, 78, 1);
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 0 0 40px;
   @media screen and (min-width: 1200px) {
     font-size: 28px;
+    margin-left: 90px;
   }
 `;
 const NavText = styled.p`
   font-size: 8.7px;
   color: rgba(121, 99, 78, 1);
   text-transform: uppercase;
-  margin: 5px 0 0 -5px;
+  margin: 5px 0 0 40px;
   @media screen and (min-width: 1200px) {
     margin: 10px 0 0 0;
     font-size: 17.5px;
+    margin-left: 90px;
   }
 `;
 const animation = keyframes`
@@ -318,27 +323,40 @@ const Span2 = styled.span`
   }
 `;
 
-const RightNavContainer = styled.nav`
-  margin-right: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  background: rgba(192, 166, 143, 0.5);
-  text-transform: uppercase;
-  width: 60px;
-  align-items: center;
-  justify-content: center;
+const ShowNavListbutton = styled.button`
+  display: block;
   position: absolute;
-  z-index: 2;
-  top: 20px;
-  right: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  top: 3px;
+  right: 0;
+  border: none;
+  padding: 0;
+  border: none;
+  padding: 5px;
+  background: rgba(242, 237, 233, 1);
+
   @media screen and (min-width: 1200px) {
+    display: none;
+  }
+`;
+const Menu = styled.div`
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(179, 154, 132, 1);
+
+  :not(:last-child) {
+    margin-bottom: 5px;
+  }
+`;
+
+const RightNavContainerDesktop = styled.nav`
+  display: none;
+  @media screen and (min-width: 1200px) {
+    text-transform: uppercase;
+    z-index: 2;
+    display: flex;
     margin-right: 0;
-    border-radius: 0;
-    padding: 0;
     background: transparent;
-    position: static;
     width: 512px;
     margin-left: auto;
     flex-wrap: nowrap;
@@ -346,119 +364,22 @@ const RightNavContainer = styled.nav`
     align-items: center;
   }
 `;
-
-const NavLinkButton = styled(NavLink)`
-  /* padding: 6px;
-  width: 65px;
-  max-height: 80px;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  color: rgba(121, 99, 78, 1);
-  border-radius: 20px;
+const RightNavContainerMobile = styled.nav`
   display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  transition: all 500ms ease;
-  transition: transform 0.2s;
-  outline: none; */
-  padding: 3px;
-  width: 40px;
-  max-height: 40px;
+  flex-wrap: nowrap;
+  background: rgba(192, 166, 143, 1);
+  text-transform: uppercase;
+  width: calc(100% - 8px);
+  align-items: center;
   justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  color: rgba(121, 99, 78, 1);
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  transition: all 500ms ease;
-  transition: transform 0.2s;
-  outline: none;
+  position: absolute;
+  z-index: 2;
+  top: 4px;
+  right: 4px;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 2px;
   @media screen and (min-width: 1200px) {
-    padding: 6px;
-    width: 65px;
-    max-height: 80px;
-    /* justify-content: center;
-    text-align: center; */
-    text-decoration: none;
-    color: rgba(121, 99, 78, 1);
-    border-radius: 20px;
-    /* display: flex;
-    flex-wrap: wrap;
-    position: relative; */
-    /* transition: all 500ms ease;
-    transition: transform 0.2s; */
-    /* outline: none; */
-  }
-
-  :hover {
-    transform: scale(1.3);
-    @media screen and (min-width: 1200px) {
-      /* transform: scale(1.3); */
-    }
-  }
-
-  :not(:first-child) {
-    margin-top: 15px;
-    @media screen and (min-width: 1200px) {
-      margin-top: 0;
-      margin-left: 15px;
-    }
-  }
-
-  :focus,
-  :hover {
-    border-radius: 10px;
-    background: #ffffff;
-    @media screen and (min-width: 1200px) {
-      border-radius: 20px;
-    }
-  }
-
-  :before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 40px;
-    border-radius: 10px;
-    background: rgba(192, 166, 143, 0.5);
-    transition: all 1s ease;
-    @media screen and (min-width: 1200px) {
-      min-width: 65px;
-      height: 0;
-      border-radius: 20px;
-    }
-  }
-
-  :hover:before {
-    height: 100%;
-    color: rgba(192, 166, 143, 0.5);
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    @media screen and (min-width: 1200px) {
-      font-size: 12px;
-    }
-  }
-`;
-const IconNav = styled.img`
-  width: 24px;
-  height: 24px;
-  @media screen and (min-width: 1200px) {
-    width: 32px;
-    height: 32px;
-  }
-`;
-const SpanNavText = styled.span`
-  font-size: 5px;
-  font-weight: bold;
-  margin-top: 2px;
-  @media screen and (min-width: 1200px) {
-    font-size: 8px;
-    font-weight: bold;
-    margin-top: 5px;
+    display: none;
   }
 `;

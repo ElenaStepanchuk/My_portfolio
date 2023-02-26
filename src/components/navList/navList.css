@@ -1,0 +1,12 @@
+@media screen and (min-width: 1200px) {
+  .active {
+    border-radius: 20px;
+    background: #ffffff;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .active {
+    border-radius: 5px;
+    background: #ffffff;
+  }
+}
