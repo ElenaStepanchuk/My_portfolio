@@ -85,16 +85,11 @@ export default Home;
 
 const LeftPage = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
-  /* @media screen and (min-width: 320px) {
-    max-width: 380px;
-  } */
-  /* @media screen and (min-width: 768px) {
-    max-width: 768px;
-    
-  } */
-  @media screen and (min-width: 1180px) {
+  @media screen and (min-width: 1200px) {
     width: 512px;
     padding: 50px;
   }
@@ -104,10 +99,6 @@ const HomePhoto = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* @media screen and (min-width: 1024px) {
-   
-  } */
-  /* border-radius: 30px; */
 `;
 
 const RightPage = styled.div`
@@ -234,34 +225,4 @@ const Span = styled.span`
   :nth-of-type(29) {
     animation-delay: 2.4s;
   }
-  // :nth-of-type(30) {
-  //   animation-delay: 4.45s;
-  // }
-  // :nth-of-type(31) {
-  //   animation-delay: 4.5s;
-  // }
-  // :nth-of-type(32) {
-  //   animation-delay: 2.55s;
-  // }
-  // :nth-of-type(33) {
-  //   animation-delay: 2.6s;
-  // }
-  // :nth-of-type(34) {
-  //   animation-delay: 2.65s;
-  // }
-  // :nth-of-type(35) {
-  //   animation-delay: 2.7s;
-  // }
-  // :nth-of-type(36) {
-  //   animation-delay: 2.75s;
-  // }
-  // :nth-of-type(37) {
-  //   animation-delay: 2.8s;
-  // }
-  // :nth-of-type(38) {
-  //   animation-delay: 2.85s;
-  // }
-  // :nth-of-type(39) {
-  //   animation-delay: 2.9s;
-  // }
 `;
