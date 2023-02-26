@@ -92,9 +92,10 @@ const ContactText = styled.p`
   font-size: 10px;
   @media screen and (min-width: 1200px) {
     font-size: 20px;
+    text-align: justify;
   }
   font-weight: bold;
-  text-align: justify;
+  text-align: center;
   opacity: 0;
   transform: rotate(-5deg) translate(-650px, 0);
   animation: ${animation} 1s forwards;

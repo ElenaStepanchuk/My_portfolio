@@ -116,10 +116,15 @@ const Span = styled.span`
 `;
 
 const SkillsList = styled.ul`
-  padding: 0 0 0 10px;
   margin: 10px 0 0 0;
+  padding: 0 0 0 10px;
 `;
 const ItemList = styled.li`
+  @media screen and (min-width: 1200px) {
+    justify-content: start;
+  }
+  display: flex;
+  justify-content: center;
   color: rgba(121, 99, 78, 1);
   font-style: italic;
   font-size: 12px;
@@ -194,10 +199,11 @@ const LeftAnimationPage = styled.div`
   @media screen and (max-width: 1199px) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     background: #ffffff;
     height: 250px;
+    width: 250px;
   }
 `;
 
