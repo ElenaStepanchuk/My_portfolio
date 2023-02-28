@@ -24,7 +24,7 @@ const MyWork = () => {
   const arraySlides = [slide1, slide2, slide3, slide4, slide5];
   const arrayLinks = [
     'https://elenastepanchuk.github.io/goit-markup-hw-08/index.html',
-    'https://olenatepanchukhw8.netlify.app/',
+    'https://silver-gingersnap-093dd8.netlify.app/',
     'https://elenastepanchuk365.netlify.app/',
     'https://elenastepanchuk.github.io/goit-react-hw-04-hooks-images/',
     'https://elenastepanchuk.github.io/goit-js-hw-11/',
