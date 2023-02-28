@@ -7,12 +7,12 @@ import {
   Footer,
   DollarsAnimation,
 } from '../components';
-import MyWork from '../pages/myWork/MyWork';
+// import MyWork from '../pages/myWork/MyWork';
 
 const Home = lazy(() => import('../pages/home/Home'));
 const About = lazy(() => import('../pages/about/About'));
 const Skills = lazy(() => import('../pages/skills/Skills'));
-// const MyWork = lazy(() => import('../pages/myWork/MyWork'));
+const MyWork = lazy(() => import('../pages/myWork/MyWork'));
 const Contact = lazy(() => import('../pages/contact/Contact'));
 
 export const App = () => {
