@@ -6,11 +6,12 @@ import css from './myWork.module.css';
 
 import styled, { keyframes } from 'styled-components';
 import React, { useState } from 'react';
-import slide5 from '../../img/myWorks/webStudioPng.png';
-import slide4 from '../../img/myWorks/serchPhotoPng.png';
-import slide3 from '../../img/myWorks/imageFinderPng.png';
-import slide2 from '../../img/myWorks/moviesFinderPng.png';
-import slide1 from '../../img/myWorks/phonebookPng.png';
+
+import slide5 from '../../img/myWorks/serchPhotoPng.png';
+import slide4 from '../../img/myWorks/imageFinderPng.png';
+import slide3 from '../../img/myWorks/moviesFinderPng.png';
+import slide2 from '../../img/myWorks/phonebookPng.png';
+import slide1 from '../../img/myWorks/webStudioPng.png';
 
 import slide2_1 from '../../img/myWorks/slimMom.png';
 import slide2_2 from '../../img/myWorks/filmotekaPng.png';
@@ -22,18 +23,18 @@ gsap.registerPlugin(CSSPlugin);
 const MyWork = () => {
   const arraySlides = [slide1, slide2, slide3, slide4, slide5];
   const arrayLinks = [
+    'https://elenastepanchuk.github.io/goit-markup-hw-08/index.html',
     'https://olenatepanchukhw8.netlify.app/',
     'https://elenastepanchuk365.netlify.app/',
     'https://elenastepanchuk.github.io/goit-react-hw-04-hooks-images/',
     'https://elenastepanchuk.github.io/goit-js-hw-11/',
-    'https://elenastepanchuk.github.io/goit-markup-hw-08/index.html',
   ];
   const arrayLinkName = [
+    'Web Studio',
     'Phonebook',
     'Movies finder',
     'Finder photos',
     'Serch photos',
-    'Web Studio',
   ];
 
   const arraySlides2 = [slide2_1, slide2_2, slide2_3];
