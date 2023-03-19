@@ -34,7 +34,7 @@ const MyWork = () => {
     'Phonebook',
     'Movies finder',
     'Finder photos',
-    'Serch photos',
+    'Search photos',
   ];
 
   const arraySlides2 = [slide2_1, slide2_2, slide2_3];
