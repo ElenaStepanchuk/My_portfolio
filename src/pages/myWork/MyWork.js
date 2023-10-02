@@ -165,7 +165,6 @@ const MyWork = () => {
             </button>
           </div>
         </div>
-        {/* ------------------ */}
         <div className={css.right_page}>
           <Span>C</Span>
           <Span>o</Span>
